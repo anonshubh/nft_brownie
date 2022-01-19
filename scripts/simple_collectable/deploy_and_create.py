@@ -1,9 +1,8 @@
-from scripts.helpers import get_account
+from scripts.helpers import get_account,OPENSEA_URL
 from brownie import SimpleCollectable
 
 
 simple_token_uri = ""
-OPENSEA_URL = "https://testnets.opensea.io/assets/{}/{}"
 
 def deploy_and_create():
     account = get_account()
