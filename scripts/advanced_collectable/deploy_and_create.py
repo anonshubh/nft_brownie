@@ -10,11 +10,13 @@ def deploy_and_create():
         config["networks"][network.show_active()]["key_hash"],
         config["networks"][network.show_active()]["fee"],
         {"from": account},
+        publish_source=config["networks"][network.show_active()].get("verify", False)
     )
     fund_with_link(adv_collectable.address)
     creating_tx = adv_collectable.createCollectable({"from":account})
     creating_tx.wait(1)
     print("New Token has been Created!")
+    return adv_collectable,creating_tx
 
 
 def main():
