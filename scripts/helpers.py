@@ -19,6 +19,10 @@ contract_to_mock = {
     "link_token": LinkToken,
 }
 
+TYPE_MAPPING = {0:"CHARACTER",1:"SCENE"}
+
+def get_type(type_):
+    return TYPE_MAPPING[type_]
 
 def get_account(index=None, id=None):
     if index:
